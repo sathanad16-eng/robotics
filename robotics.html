@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sathana D | Robotics Engineer Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #ccc;
+    }
+
+    header a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    section h2 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #00ffff;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      width: 300px;
+      height: 220px;
+      transition: transform 0.2s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      perspective: 1000px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #00ffff;
+    }
+
+    .card p {
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sathana D</h1>
+    <p>B.Sc. Artificial Intelligence and Machine Learning</p>
+    <p>KPR College of Arts Science and Research</p>
+    <p>Email: <a href="mailto:sathanad16@gmail.com">sathanad16@gmail.com</a></p>
+  </header>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="card-container">
+      <div class="card tilt">
+        <h3>AI-Powered Surveillance Robot</h3>
+        <p>Developed a mobile robot that uses real-time object detection with YOLOv5 and streams video to a web interface.</p>
+      </div>
+      <div class="card tilt">
+        <h3>Voice-Controlled Home Automation</h3>
+        <p>Used NLP and Arduino to create a voice-controlled system for lights, fans, and security for smart homes.</p>
+      </div>
+      <div class="card tilt">
+        <h3>Human Emotion Detection</h3>
+        <p>Trained a CNN model on FER2013 dataset to classify human emotions and provide real-time predictions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Achievements</h2>
+    <div class="card-container">
+      <div class="card tilt">
+        <h3>Runner-Up - AI Robotics Hackathon 2025</h3>
+        <p>Created a self-navigating drone capable of object detection and emergency response mapping.</p>
+      </div>
+      <div class="card tilt">
+        <h3>Completed - TensorFlow Developer Certificate</h3>
+        <p>Earned certification in deep learning, covering CNNs, RNNs, and deployment with TensorFlow Lite.</p>
+      </div>
+      <div class="card tilt">
+        <h3>Finalist - IEEE Innovation Challenge</h3>
+        <p>Presented a hybrid ML-IoT solution for smart agriculture using soil sensors and crop prediction models.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sathana D. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 3D Tilt Effect
+    document.querySelectorAll('.tilt').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 15;
+        const rotateY = (x - centerX) / 15;
+
+        card.style.transform = `rotateX(${ -rotateX }deg) rotateY(${ rotateY }deg)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+      });
+    });
+  </script>
+
+</body>
+</html>
